@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Practice</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            margin: 10px;
+        }
+
+        /* 👇 Mobile ke liye */
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column; /* side se niche aa jayenge */
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Responsive Example</h1>
+
+<div class="container">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+</div>
+
+</body>
+</html>
