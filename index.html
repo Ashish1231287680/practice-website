@@ -1,34 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Responsive Practice</title>
+    <title>My Photo Gallery</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        body {
-            font-family: Arial;
-            background-color: lightblue;
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #FFF7ED, #FFF3E0);
+            text-align:center;
+            margin:0;
+            padding:20px;
         }
 
-        .container {
-            display: flex;
-            justify-content: space-around;
+        h1{
+            color:#333;
         }
 
-        .box {
-            width: 100px;
-            height: 100px;
-            background-color: red;
-            color: white;
-            text-align: center;
-            line-height: 100px;
-            margin: 10px;
+        nav{
+            margin:20px 0;
         }
 
-        /* 👇 Mobile ke liye */
-        @media (max-width: 600px) {
-            .container {
-                flex-direction: column; /* side se niche aa jayenge */
-                align-items: center;
+        nav a{
+            text-decoration:none;
+            color:white;
+            background:#ff9800;
+            padding:10px 15px;
+            margin:5px;
+            border-radius:8px;
+            display:inline-block;
+        }
+
+        button{
+            padding:10px 15px;
+            margin:10px;
+            border:none;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        .show-btn{
+            background:green;
+            color:white;
+        }
+
+        .hide-btn{
+            background:red;
+            color:white;
+        }
+
+        .welcome-btn{
+            background:blue;
+            color:white;
+        }
+
+        .gallery{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:20px;
+            margin-top:20px;
+        }
+
+        .gallery img{
+            width:250px;
+            height:180px;
+            object-fit:cover;
+            border-radius:15px;
+            transition:0.3s;
+        }
+
+        .gallery img:hover{
+            transform:scale(1.1);
+        }
+
+        footer{
+            margin-top:30px;
+            padding:15px;
+            background:#333;
+            color:white;
+        }
+
+        @media(max-width:600px){
+            .gallery img{
+                width:90%;
+                height:auto;
             }
         }
     </style>
@@ -36,13 +94,56 @@
 
 <body>
 
-<h1>Responsive Example</h1>
+    <h1>Welcome to My Photo Gallery</h1>
 
-<div class="container">
-    <div class="box">1</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
-</div>
+    <p>Hello! My name is Ashish. This is my photo gallery website.</p>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Gallery</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <button class="show-btn" onclick="showPhotos()">Show Photos</button>
+
+    <button class="hide-btn" onclick="hidePhotos()">Hide Photos</button>
+
+    <button class="welcome-btn" onclick="welcomeMsg()">Welcome</button>
+
+    <div class="gallery" id="gallery">
+
+        <img src="https://picsum.photos/id/1015/400/300" alt="Photo">
+
+        <img src="https://picsum.photos/id/1025/400/300" alt="Photo">
+
+        <img src="https://picsum.photos/id/1035/400/300" alt="Photo">
+
+        <img src="https://picsum.photos/id/1045/400/300" alt="Photo">
+
+    </div>
+
+    <footer>
+        © <span id="year"></span> My Photo Gallery
+    </footer>
+
+    <script>
+
+        function showPhotos(){
+            document.getElementById("gallery").style.display="flex";
+        }
+
+        function hidePhotos(){
+            document.getElementById("gallery").style.display="none";
+        }
+
+        function welcomeMsg(){
+            alert("Welcome to My Photo Gallery");
+        }
+
+        document.getElementById("year").innerHTML =
+        new Date().getFullYear();
+
+    </script>
 
 </body>
 </html>
