@@ -2,6 +2,7 @@
 <html> 
 <head>
 	<title> Project 1 </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style>
 body{
@@ -12,18 +13,32 @@ body{
 
 h1{
 	background-color:red;
-	fount-size:16px;
+	font-size:16px;
 	text-align:center;
 	border:solid white;
 	border-radius:7px;
 }
 
 img{
-	display:block;
-	margin:10px auto;
-	border:solid white;
-	width:500px;
+	width:100%;
+	max-width:500px;
 	height:auto;
+}
+
+div{
+	max-width:800px;
+	margin:auto;
+	padding:10px;
+}
+
+@media (max-width:600px){
+	h1{
+		font-size:18px;
+	}
+
+p{
+	line-height:1.6;
+}
 }
 
 </style>
@@ -34,7 +49,7 @@ img{
 </div>
 
 <div>
-	<img src="https://github.com/Ashish1231287680/practice-website/blob/main/superman-red-5120x2880-19039.jpg?raw=true" alt="SUPERMAN">
+	<img src="file:///C:/Users/Ashish%20Pratap%20Singh/Downloads/MCU%20WALLPAPER/superman-red-5120x2880-19039.jpg" alt="SUPERMAN">
 </div>
 
 <div>
